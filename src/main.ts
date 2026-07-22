@@ -85,6 +85,21 @@ function setupReveal(): void {
   elements.forEach((el) => observer.observe(el))
 }
 
+function setupScrollRestoration(): void {
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual'
+  }
+
+  const resetScroll = () => window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+
+  if (!location.hash) {
+    window.addEventListener('load', resetScroll, { once: true })
+    window.addEventListener('pageshow', (event) => {
+      if ((event as PageTransitionEvent).persisted) resetScroll()
+    })
+  }
+}
+
 function setupSmoothScroll(): void {
   document.querySelectorAll<HTMLAnchorElement>('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (event) => {
@@ -131,5 +146,6 @@ function setupActiveNav(): void {
 setupHeader()
 setupMobileNav()
 setupReveal()
+setupScrollRestoration()
 setupSmoothScroll()
 setupActiveNav()
