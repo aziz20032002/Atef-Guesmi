@@ -90,14 +90,33 @@ function setupScrollRestoration(): void {
     history.scrollRestoration = 'manual'
   }
 
-  const resetScroll = () => window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+  const html = document.documentElement
+  const resetScroll = () => {
+    const previousScrollBehavior = html.style.scrollBehavior
+    html.style.scrollBehavior = 'auto'
 
-  if (!location.hash) {
-    window.addEventListener('load', resetScroll, { once: true })
-    window.addEventListener('pageshow', (event) => {
-      if ((event as PageTransitionEvent).persisted) resetScroll()
-    })
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    html.scrollTop = 0
+    document.body.scrollTop = 0
+
+    if (previousScrollBehavior) {
+      html.style.scrollBehavior = previousScrollBehavior
+    } else {
+      html.style.removeProperty('scroll-behavior')
+    }
   }
+
+  const resetIfNoHash = () => {
+    if (!location.hash) resetScroll()
+  }
+
+  window.addEventListener('DOMContentLoaded', resetIfNoHash, { once: true })
+  window.addEventListener('load', () => requestAnimationFrame(resetIfNoHash), { once: true })
+  window.addEventListener('pageshow', (event) => {
+    if ((event as PageTransitionEvent).persisted || !location.hash) {
+      requestAnimationFrame(resetScroll)
+    }
+  })
 }
 
 function setupSmoothScroll(): void {
