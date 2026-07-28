@@ -143,7 +143,10 @@ export function renderApp(): string {
                 `<img class="property-gallery-slide${photoIndex === 0 ? ' is-active' : ''}" src="${photo}" alt="${imageAlt} — photo ${photoIndex + 1}" width="900" height="675" loading="lazy" aria-hidden="${photoIndex !== 0}" />`
             )
             .join('')}
-          <span class="property-label">${images.length > 1 ? '3 photos' : 'Photo illustrative'}</span>
+          <div class="property-labels">
+            <span class="property-label property-label--featured">Propriété vedette</span>
+            <span class="property-label property-label--photos">${images.length > 1 ? '3 photos' : 'Photo illustrative'}</span>
+          </div>
           ${
             images.length > 1
               ? `<button class="property-gallery-arrow property-gallery-arrow--previous" type="button" data-gallery-previous aria-label="Photo précédente">‹</button>
@@ -163,15 +166,15 @@ export function renderApp(): string {
           <p class="property-city">${type} · ${city}</p>
           <h3>${price}</h3>
           <p class="property-address">${address}</p>
-          ${description ? `<p class="property-description">${description}</p>` : ''}
           ${
             bedrooms !== null && bathrooms !== null
               ? `<div class="property-features" aria-label="${bedrooms} chambres et ${bathrooms} salles de bain">
-                  <span><strong>${bedrooms}</strong> chambres</span>
-                  <span><strong>${bathrooms}</strong> salles de bain</span>
+                  <span><span class="property-feature-icon" aria-hidden="true">${uiIcons.bed}</span><strong>${bedrooms}</strong> chambres</span>
+                  <span><span class="property-feature-icon" aria-hidden="true">${uiIcons.bath}</span><strong>${bathrooms}</strong> salles de bain</span>
                 </div>`
               : '<div class="property-features"><span>Terrain résidentiel</span></div>'
           }
+          ${description ? `<p class="property-description">${description}</p>` : ''}
           <a class="btn btn-service" href="${url}" target="_blank" rel="noopener noreferrer">
             Voir la propriété
             <span class="btn-icon" aria-hidden="true">${uiIcons.arrow}</span>
@@ -545,8 +548,8 @@ export function renderApp(): string {
 
           ${sectionHeading(
             'Sélection immobilière',
-            'Propriétés en vedette',
-            'Découvrez une sélection de propriétés affichées sur la page officielle RE/MAX Élite.'
+            'Propriété en vedette',
+            'Découvrez cette propriété présentée sur la page officielle RE/MAX Élite.'
           )}
 
           <div class="property-grid">
