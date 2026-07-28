@@ -1,4 +1,23 @@
-import { photoUrl } from './assets'
+import {
+  bungalowPropertyUrl,
+  chateauguayPhoto1Url,
+  chateauguayPhoto2Url,
+  chateauguayPhoto3Url,
+  closingUrl,
+  familyPropertyUrl,
+  interiorPropertyUrl,
+  marketUrl,
+  neighborhoodUrl,
+  photoUrl,
+  transactionUrl,
+  townhousePropertyUrl,
+  stFrancisPhoto1Url,
+  stFrancisPhoto2Url,
+  stFrancisPhoto3Url,
+  victoriavillePhoto1Url,
+  victoriavillePhoto2Url,
+  victoriavillePhoto3Url,
+} from './assets'
 
 
 
@@ -10,7 +29,7 @@ export const site = {
 
   tagline: 'Courtier immobilier résidentiel',
 
-  brokerage: 'Re/Max Élite',
+  brokerage: 'RE/MAX Élite',
 
   fullName: 'Atef Guesmi — Courtier Immobilier',
 
@@ -26,6 +45,10 @@ export const site = {
 
   facebook: 'https://www.facebook.com/profile.php?id=61585795307978',
 
+  instagram: 'https://www.instagram.com/atef.guesmi_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
+
+  whatsapp: 'https://wa.me/18194617082',
+
 } as const
 
 
@@ -36,9 +59,9 @@ export const navLinks = [
 
   { href: '#process', label: 'Méthode' },
 
-  { href: '#about', label: 'À propos' },
+  { href: '#properties', label: 'Propriétés' },
 
-  { href: '#engagement', label: 'Engagement' },
+  { href: '#about', label: 'À propos' },
 
   { href: '#contact', label: 'Contact' },
 
@@ -48,25 +71,27 @@ export const navLinks = [
 
 export const hero = {
 
-  badge: 'Re/Max Élite',
+  badge: 'RE/MAX ÉLITE',
 
-  title: 'Votre projet immobilier, guidé avec sérieux et proximité.',
+  title: 'Acheter. Vendre.<br>Avancer en confiance.',
 
   lead:
 
-    'Courtier immobilier résidentiel à Drummondville et environs, je vous accompagne pour acheter ou vendre en toute confiance — avec une stratégie de marché précise et une écoute attentive.',
+    'Je vous accompagne avec une stratégie claire, une communication simple et un suivi personnalisé à chaque étape de votre projet immobilier.',
 
-  primaryCta: 'Prendre rendez-vous',
+  primaryCta: 'Parler de mon projet',
 
-  secondaryCta: 'Voir les services',
+  secondaryCta: 'Voir les propriétés',
 
   trustPoints: [
 
-    'Analyse de marché locale',
+    'Achat',
 
-    'Accompagnement complet',
+    'Vente',
 
-    'Transactions sécurisées',
+    'Évaluation',
+
+    'Accompagnement',
 
   ],
 
@@ -121,6 +146,8 @@ export const services = [
   {
 
     icon: 'buy' as const,
+    image: familyPropertyUrl,
+    imageAlt: 'Maison familiale contemporaine avec aménagement paysager',
 
     title: 'Achat d\'une propriété',
 
@@ -145,6 +172,8 @@ export const services = [
   {
 
     icon: 'sell' as const,
+    image: interiorPropertyUrl,
+    imageAlt: 'Salon et cuisine à aire ouverte dans une propriété haut de gamme',
 
     title: 'Vente d\'une propriété',
 
@@ -169,6 +198,8 @@ export const services = [
   {
 
     icon: 'evaluate' as const,
+    image: bungalowPropertyUrl,
+    imageAlt: 'Bungalow contemporain en pierre soigneusement aménagé',
 
     title: 'Évaluation marchande',
 
@@ -193,6 +224,8 @@ export const services = [
   {
 
     icon: 'support' as const,
+    image: townhousePropertyUrl,
+    imageAlt: 'Maison de ville moderne en brique dans un quartier résidentiel',
 
     title: 'Accompagnement personnalisé',
 
@@ -220,11 +253,11 @@ export const services = [
 
 export const processIntro = {
 
-  eyebrow: 'Méthode',
+  eyebrow: 'Notre méthode',
 
-  title: 'Une démarche claire, de la première rencontre à la signature',
+  title: 'Votre projet en 3 étapes',
 
-  lead: 'Chaque étape est planifiée pour vous offrir visibilité, sérénité et résultats concrets.',
+  lead: 'Trois étapes simples pour avancer avec une stratégie claire et un accompagnement constant.',
 
 } as const
 
@@ -236,9 +269,11 @@ export const processSteps = [
 
     step: '01',
 
-    title: 'Premier échange',
+    icon: 'discussion' as const,
 
-    description: 'Compréhension de vos objectifs, de votre calendrier et de vos critères prioritaires.',
+    title: 'Discussion sur votre projet',
+
+    description: 'Nous précisons vos objectifs, vos priorités et votre calendrier.',
 
   },
 
@@ -246,9 +281,11 @@ export const processSteps = [
 
     step: '02',
 
-    title: 'Stratégie sur mesure',
+    icon: 'strategy' as const,
 
-    description: 'Plan d\'action avec analyse de marché, budget et étapes concrètes à suivre.',
+    title: 'Recherche ou stratégie de mise en marché',
+
+    description: 'Nous bâtissons un plan d’action adapté au marché et à votre réalité.',
 
   },
 
@@ -256,22 +293,90 @@ export const processSteps = [
 
     step: '03',
 
-    title: 'Exécution & suivi',
+    icon: 'transaction' as const,
 
-    description: 'Accompagnement actif à chaque étape, avec communication transparente et réactive.',
+    title: 'Accompagnement jusqu’à la transaction',
+
+    description: 'Nous coordonnons chaque étape jusqu’à la signature, en toute confiance.',
 
   },
 
+] as const
+
+export const projectMoments = [
   {
-
-    step: '04',
-
-    title: 'Clôture en confiance',
-
-    description: 'Finalisation sécurisée de la transaction et suivi post-signature si nécessaire.',
-
+    image: transactionUrl,
+    imageAlt: 'Poignée de main concluant une entente immobilière',
+    eyebrow: 'Une relation de confiance',
+    title: 'Des décisions prises avec clarté',
+    description: 'Chaque échange vise à rendre votre transaction simple, transparente et rassurante.',
   },
+  {
+    image: marketUrl,
+    imageAlt: 'Illustration du marché immobilier résidentiel canadien',
+    eyebrow: 'Lecture du marché',
+    title: 'Une stratégie ancrée dans votre réalité',
+    description: 'Le contexte local et vos priorités guident chaque recommandation.',
+  },
+  {
+    image: neighborhoodUrl,
+    imageAlt: 'Vue aérienne d’un quartier résidentiel familial',
+    eyebrow: 'Drummondville et environs',
+    title: 'Le bon secteur pour votre projet',
+    description: 'Une recherche attentive aux quartiers, aux propriétés et à votre mode de vie.',
+  },
+  {
+    image: closingUrl,
+    imageAlt: 'Clés déposées sur les documents d’une transaction immobilière',
+    eyebrow: 'Jusqu’à la signature',
+    title: 'Présent à chaque étape',
+    description: 'Un accompagnement constant jusqu’à la remise des clés.',
+  },
+] as const
 
+export const featuredProperties = [
+  {
+    image: chateauguayPhoto1Url,
+    images: [chateauguayPhoto1Url, chateauguayPhoto2Url, chateauguayPhoto3Url],
+    imageAlt: 'Appartement à vendre au 9 Crois. de Cambrai à Châteauguay',
+    type: 'Appartement',
+    city: 'Châteauguay',
+    address: '9 Crois. de Cambrai, app. 5',
+    price: '359 900 $',
+    bedrooms: 2,
+    bathrooms: 1,
+    description:
+      'Grand condo de 1 057 pi², lumineux et soigneusement entretenu, offrant un bel espace à aire ouverte, une cuisine fonctionnelle, beaucoup de rangement et deux chambres de bonne dimension.',
+    url: 'https://remax-elite.ca/fr/nos-proprietes/chateauguay/9-crois-de-cambrai/17916937',
+  },
+  {
+    image: victoriavillePhoto1Url,
+    images: [victoriavillePhoto1Url, victoriavillePhoto2Url, victoriavillePhoto3Url],
+    imageAlt: 'Maison de plain-pied à vendre au 305 Rue des Pétunias à Victoriaville',
+    type: 'Maison de plain-pied',
+    city: 'Victoriaville',
+    address: '305 Rue des Pétunias',
+    price: '449 000 $',
+    bedrooms: 5,
+    bathrooms: 2,
+    description:
+      'Spacieuse propriété familiale comprenant cinq chambres, deux salles de bains et des espaces chaleureux. Elle offre une cour intime aménagée avec une grande terrasse, une galerie couverte, un foyer et une remise avec porte de garage.',
+    url: 'https://remax-elite.ca/fr/nos-proprietes/victoriaville/305-rue-des-petunias/14459744',
+  },
+  {
+    image: stFrancisPhoto1Url,
+    images: [stFrancisPhoto1Url, stFrancisPhoto2Url, stFrancisPhoto3Url],
+    imageAlt: 'Maison de plain-pied à vendre au 201 Boul. St-Francis à Châteauguay',
+    type: 'Maison de plain-pied',
+    city: 'Châteauguay',
+    address: '201 Boul. St-Francis',
+    price: '459 000 $',
+    bedrooms: 5,
+    bathrooms: 2,
+    description:
+      'Maison comprenant deux logements, dont une garçonnière 3 ½ au sous-sol. Le logement principal offre quatre chambres, un salon, une cuisine, une salle à manger et une salle de bains, dans un emplacement recherché près des commerces, des services et du transport en commun.',
+    url: 'https://remax-elite.ca/fr/nos-proprietes/chateauguay/201-boul-st-francis/28115179',
+  },
 ] as const
 
 
@@ -284,19 +389,16 @@ export const aboutIntro = {
 
   paragraphs: [
 
-    `${site.name} est courtier immobilier résidentiel chez ${site.brokerage}. Il met son expertise au service de votre projet pour vous aider à prendre les bonnes décisions, avec transparence et réactivité.`,
-
-    'Engagé personnellement dans chaque dossier, il reste présent à chaque étape — du premier contact à la signature — pour que votre expérience soit fluide et rassurante.',
+    `${site.name} vous accompagne personnellement pour prendre des décisions immobilières éclairées, avec une approche humaine et une connaissance attentive du marché résidentiel.`,
 
   ],
 
   highlights: [
 
-    'Membre de l\'Organisme d\'autoréglementation du courtage immobilier du Québec (OACIQ)',
-
-    'Spécialisation en immobilier résidentiel — achat et vente',
-
-    'Service personnalisé dans la région de Drummondville',
+    'Disponible et réactif',
+    'À l’écoute de vos priorités',
+    'Transparent à chaque étape',
+    'Présent jusqu’à la transaction',
 
   ],
 
@@ -314,7 +416,7 @@ export const commitments = [
 
     description:
 
-      'Présent à chaque étape du processus — sous la pluie, le soleil ou la neige — je m\'investis personnellement dans chaque propriété.',
+      'Présent à chaque étape, je m’investis pleinement dans votre projet immobilier.',
 
   },
 
@@ -326,7 +428,7 @@ export const commitments = [
 
     description:
 
-      'Un accompagnement transparent et humain, avec une écoute attentive de vos objectifs et de vos contraintes.',
+      'Un accompagnement humain, transparent et attentif à vos besoins.',
 
   },
 
@@ -338,7 +440,7 @@ export const commitments = [
 
     description:
 
-      'La force du réseau Re/Max Élite et une connaissance approfondie du marché résidentiel local.',
+      'Une connaissance du marché local appuyée par la force du réseau RE/MAX Élite.',
 
   },
 
