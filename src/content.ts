@@ -1,8 +1,5 @@
 import {
   bungalowPropertyUrl,
-  chateauguayPhoto1Url,
-  chateauguayPhoto2Url,
-  chateauguayPhoto3Url,
   closingUrl,
   familyPropertyUrl,
   interiorPropertyUrl,
@@ -11,9 +8,6 @@ import {
   photoUrl,
   transactionUrl,
   townhousePropertyUrl,
-  stFrancisPhoto1Url,
-  stFrancisPhoto2Url,
-  stFrancisPhoto3Url,
   victoriavillePhoto1Url,
   victoriavillePhoto2Url,
   victoriavillePhoto3Url,
@@ -39,7 +33,7 @@ export const site = {
 
   phoneHref: '+18194617082',
 
-  location: 'Drummondville et environs',
+  location: 'Centre-du-Québec, Montérégie, Mauricie et Estrie',
 
   photo: photoUrl,
 
@@ -117,7 +111,7 @@ export const credentials = [
 
   'Re/Max Élite',
 
-  'Drummondville et environs',
+  'Centre-du-Québec, Montérégie, Mauricie et Estrie',
 
 ] as const
 
@@ -295,7 +289,7 @@ export const processSteps = [
 
     icon: 'transaction' as const,
 
-    title: 'Accompagnement jusqu’à la transaction',
+    title: 'Accompagnement jusqu’à la fin de transaction',
 
     description: 'Nous coordonnons chaque étape jusqu’à la signature, en toute confiance.',
 
@@ -321,7 +315,7 @@ export const projectMoments = [
   {
     image: neighborhoodUrl,
     imageAlt: 'Vue aérienne d’un quartier résidentiel familial',
-    eyebrow: 'Drummondville et environs',
+    eyebrow: 'Centre-du-Québec, Montérégie, Mauricie et Estrie',
     title: 'Le bon secteur pour votre projet',
     description: 'Une recherche attentive aux quartiers, aux propriétés et à votre mode de vie.',
   },
@@ -336,20 +330,6 @@ export const projectMoments = [
 
 export const featuredProperties = [
   {
-    image: chateauguayPhoto1Url,
-    images: [chateauguayPhoto1Url, chateauguayPhoto2Url, chateauguayPhoto3Url],
-    imageAlt: 'Appartement à vendre au 9 Crois. de Cambrai à Châteauguay',
-    type: 'Appartement',
-    city: 'Châteauguay',
-    address: '9 Crois. de Cambrai, app. 5',
-    price: '359 900 $',
-    bedrooms: 2,
-    bathrooms: 1,
-    description:
-      'Grand condo de 1 057 pi², lumineux et soigneusement entretenu, offrant un bel espace à aire ouverte, une cuisine fonctionnelle, beaucoup de rangement et deux chambres de bonne dimension.',
-    url: 'https://remax-elite.ca/fr/nos-proprietes/chateauguay/9-crois-de-cambrai/17916937',
-  },
-  {
     image: victoriavillePhoto1Url,
     images: [victoriavillePhoto1Url, victoriavillePhoto2Url, victoriavillePhoto3Url],
     imageAlt: 'Maison de plain-pied à vendre au 305 Rue des Pétunias à Victoriaville',
@@ -362,20 +342,6 @@ export const featuredProperties = [
     description:
       'Spacieuse propriété familiale comprenant cinq chambres, deux salles de bains et des espaces chaleureux. Elle offre une cour intime aménagée avec une grande terrasse, une galerie couverte, un foyer et une remise avec porte de garage.',
     url: 'https://remax-elite.ca/fr/nos-proprietes/victoriaville/305-rue-des-petunias/14459744',
-  },
-  {
-    image: stFrancisPhoto1Url,
-    images: [stFrancisPhoto1Url, stFrancisPhoto2Url, stFrancisPhoto3Url],
-    imageAlt: 'Maison de plain-pied à vendre au 201 Boul. St-Francis à Châteauguay',
-    type: 'Maison de plain-pied',
-    city: 'Châteauguay',
-    address: '201 Boul. St-Francis',
-    price: '459 000 $',
-    bedrooms: 5,
-    bathrooms: 2,
-    description:
-      'Maison comprenant deux logements, dont une garçonnière 3 ½ au sous-sol. Le logement principal offre quatre chambres, un salon, une cuisine, une salle à manger et une salle de bains, dans un emplacement recherché près des commerces, des services et du transport en commun.',
-    url: 'https://remax-elite.ca/fr/nos-proprietes/chateauguay/201-boul-st-francis/28115179',
   },
 ] as const
 

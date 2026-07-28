@@ -1321,8 +1321,10 @@ h3 {
 
 .property-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 32px;
+  grid-template-columns: minmax(0, 1fr);
+  width: 100%;
+  max-width: 720px;
+  margin-inline: auto;
 }
 
 .property-card {
@@ -1330,7 +1332,7 @@ h3 {
   background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  box-shadow: 0 6px 28px var(--color-shadow);
+  box-shadow: 0 10px 32px rgba(12, 31, 63, 0.08);
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
@@ -2193,10 +2195,6 @@ h3 {
     gap: 32px;
   }
 
-  .property-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .process-grid::before {
     display: none;
   }
@@ -2368,10 +2366,6 @@ h3 {
   .showcase-controls {
     right: auto;
     left: 24px;
-  }
-
-  .property-grid {
-    grid-template-columns: 1fr;
   }
 
   .property-cta {

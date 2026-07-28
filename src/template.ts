@@ -423,7 +423,7 @@ export function renderApp(): string {
                 <span class="hero-agent-card-accent" aria-hidden="true"></span>
                 <strong>Courtier immobilier résidentiel</strong>
 
-                <span>Drummondville et environs</span>
+                <span>Centre-du-Québec, Montérégie, Mauricie et Estrie</span>
 
               </div>
 
